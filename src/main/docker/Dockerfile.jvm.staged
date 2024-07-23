@@ -35,7 +35,7 @@ RUN grep artifactId /build/target/maven-archiver/pom.properties | cut -d '=' -f2
 # mv the uber jar in case the quarkus property quarkus.package.type=uber-jar is set
 RUN mv /build/target/$(cat .env-id)-$(cat .env-version)*.jar /build/target/quarkus-app-tmp/
 
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.7-1085 
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.10-1018 
 
 ARG JAVA_PACKAGE=java-17-openjdk-devel
 ARG RUN_JAVA_VERSION=1.3.8
